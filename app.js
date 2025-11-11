@@ -202,17 +202,11 @@ btnHint.addEventListener("click", () => {
     el.style.top  = (pos.cy - rr) + "px";
     el.style.width  = (rr * 2) + "px";
     el.style.height = (rr * 2) + "px";
-    stageWrap.appendChild(el);
+    document.body.appendChild(el);
     hintEls.push(el);
   });
 
-  requestAnimationFrame(() => {
-    hintEls.forEach(el => el.style.opacity = ".85");
-    clearTimeout(hintTimer);
-    hintTimer = setTimeout(() => { hintEls.forEach(el => el.remove()); }, 1200);
-  });
-});
-  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
     hintEls.forEach(el => el.style.opacity = ".85");
     clearTimeout(hintTimer);
     hintTimer = setTimeout(() => { hintEls.forEach(el => el.remove()); }, 1200);
